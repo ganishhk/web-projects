@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            motion: 0;
+            padding: 0;
+        }
+        :root{
+            --first : #EAEFEF;
+            --sec:#BFC9D1;
+            --third:#25343F;
+            --fourth:#FF9B51;
+        }
+        .container{
+            display: flex;
+            justify-content: space-around;
+            background-color: var(--first);
+        }
+        .mcontainer{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            height: 80vh;
+        }
+        .left{
+            background-color: var(--sec);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-radius: 18px;
+        }
+        .right{
+            background-color: var(--third);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            border-radius: 18px;
+        }
+        .input{
+            margin: 20px 0px;
+        }
+        .input input{
+            width: 20rem;
+            padding: 20px;
+            border-radius: 18px;
+            border: none;
+        }
+        .but button{
+            padding: 15px 30px;
+            background-color: var(--fourth);
+            border-radius: 18px;
+            border: none;
+        }
+        .progress{
+            position: absolute;
+            right: 0;
+            margin: 30px 60px;
+        }
+        .mtitle{
+            margin: 10px 0px 0px 0px;
+            font-size: 30px;
+        }
+        li{
+            background-color: var(--first);
+            padding: 16px 20px;
+            list-style: none;
+            font-size: larger;
+            border-radius: 18px;
+            display: flex;
+            justify-content: space-between;
+            margin: 8px 0px;
+        }
+        span{
+            padding: 0px 65px;
+        }
+        .del{
+            background-color: var(--first);
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <header class="container"> 
+        <div class="title">
+            <h1>Todo App</h1>
+        </div>
+        <div class="righttitle">
+            <p>Add your tasks and monitor it </p>
+        </div>
+    </header>
+    <main class="mcontainer">
+        <div class="left">
+            <div class="input">
+                <input type="text" id="data" placeholder="Write here">
+            </div>
+            <div class="but">
+                <button id="btn">Add Tasks</button>
+            </div>
+        </div>
+        <div class="right">
+            <div class="progress" id="prog"></div>
+            <div class="mtitle">
+                <h2>Your Tasks</h2>
+            </div>
+            <div class="list">
+                <ul class="taskslist" id="tasksl"></ul>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
